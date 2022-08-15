@@ -79,7 +79,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `users` (`u_id`, `email`, `fullname`, `password`, `img`, `type`) VALUES
-(1, 'admin@admin.com', 'Muay Lee', '$2y$10$8qn2phEuDuXoPq257QxG9Og046KhIsQf/SZSX.hL4OXBTro.C8vu.', '35554b61ac86daf3ba8e0470d8033742.jpg', 1);
+(1, 'admin@admin.com', 'Admin Srisamorn', '$2y$10$8qn2phEuDuXoPq257QxG9Og046KhIsQf/SZSX.hL4OXBTro.C8vu.', '35554b61ac86daf3ba8e0470d8033742.jpg', 1);
 --
 -- Indexes for dumped tables
 --
