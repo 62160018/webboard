@@ -2,6 +2,8 @@
 session_start();
 require_once 'config/db.php';
 
+
+
 if (isset($_SESSION['u_id'])) {
     $_SESSION['error'] = 'กรุณาเข้าสู่ระบบ!';
     header('location: index.php');
@@ -12,6 +14,10 @@ if (isset($_REQUEST['register'])) {
     $email = $_REQUEST['email'];
     $fullname = $_REQUEST['fullname'];
     $password = $_REQUEST['password'];
+    $passwordcon = $_REQUEST['passwordcon'];
+   
+ 
+    
 
     $img = $_FILES['img']['name'];
     $tmp_dir = $_FILES['img']['tmp_name'];
@@ -24,12 +30,19 @@ if (isset($_REQUEST['register'])) {
     $query->bindParam("fullname", $fullname, PDO::PARAM_STR);
     $query->bindParam("password", $passwordHash, PDO::PARAM_STR);
     $query->bindParam("img", $img, PDO::PARAM_STR);
-    if ($query->execute()) {
-        $updateMsg = "สมัครสมาชิกสำเร็จ";
-        header("Refresh:1;index.php");
+
+    if ($password == $passwordcon) {
+        try {
+            $query->execute();
+            $updateMsg = "สมัครสมาชืกสำเร็จ";
+            header("Refresh:1;index.php");
+        }catch (Exception $e)
+        {$errorMsg = "สมัครสมาชิกไม่สำเร็จ";}
+           
     } else {
         $errorMsg = "สมัครสมาชิกไม่สำเร็จ";
     }
+
 }
 ?>
 
@@ -60,6 +73,7 @@ if (isset($_REQUEST['register'])) {
                         </div>
                     <?php } ?>
                     <?php
+
                     if (isset($updateMsg)) {
                     ?>
                         <div class="alert alert-success">
@@ -80,7 +94,7 @@ if (isset($_REQUEST['register'])) {
                             <label for="floatingPassword">รหัสผ่าน</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" placeholder="Con-Password" required>
+                            <input type="password" class="form-control" name="passwordcon" placeholder="Con-Password" required>
                             <label for="floatingPassword">ยืนยันรหัสผ่าน</label>
                         </div>
                         <div class="input-group mb-3">

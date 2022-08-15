@@ -71,7 +71,7 @@ CREATE TABLE `category` (
 
 CREATE TABLE `users` (
   `u_id` int(11) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(20) NOT NULL UNIQUE,
   `fullname` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
   `img` varchar(200) DEFAULT NULL,

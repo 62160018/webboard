@@ -38,7 +38,6 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                     </div>
 
                     <?php
-
                     if (isset($_SESSION['u_id'])) {
 
                     ?>
