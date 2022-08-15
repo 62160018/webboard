@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Special+Elite&display=swap');
+html {
+background-color: rgba(220, 248, 214, 0.888);
+}
+.topic {
+  font-family: 'Lobster Two', cursive;
+}
 * {
   box-sizing: border-box;
   font-family: 'Kanit', sans-serif;
@@ -43,6 +49,7 @@
 
 .board {
   width: 100%;
+  background-color: rgba(220, 248, 214, 0.888);
 }
 
 .board--container {
@@ -62,15 +69,15 @@
   width: 100px;
   height: auto;
   border: 3px solid rgb(0, 0, 0);
-  background-color: rgb(176, 249, 252);
+  background-color: rgb(138, 213, 153);
 }
 
 .board--body {
   width: 80%;
   height: auto;
-  border: 3px solid rgb(0, 0, 0);
   margin: 0;
   padding: 25px;
+  
 }
 
 .board--profile {
@@ -80,6 +87,7 @@
   padding: 25px;
   height: auto;
   border: 3px solid rgb(0, 0, 0);
+  border-radius: 10px;
 }
 
 .profile-img img {
@@ -105,12 +113,15 @@
   border: 3px solid rgb(0, 0, 0);
   margin: 0;
   padding: 25px;
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
 }
 
 .login {
   width: 100%;
   height: auto;
   text-align: center;
+  background-color: rgba(220, 248, 214, 0.888);
 }
 
 .login--container {
@@ -126,6 +137,7 @@
   height: auto;
   margin: 0;
   padding: 25px;
+  
 }
 
 .login--content {
@@ -139,6 +151,7 @@
   width: 100%;
   height: auto;
   text-align: center;
+  
 }
 
 .register--container {
@@ -166,7 +179,8 @@
 .addboard {
   width: 100%;
   height: auto;
-  text-align: center;
+  
+  background-color: rgba(220, 248, 214, 0.888);
 }
 
 .addboard--container {
@@ -194,11 +208,13 @@
 .detail {
   width: 100%;
   padding: 50px;
+  background-color: rgba(220, 248, 214, 0.888);
 }
 
 .detail--container {
   width: 100%;
   height: auto;
+  
 }
 
 .detail--header h1{
@@ -227,7 +243,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  width: 300px;
 
 }
 .detail--content--img img{
@@ -337,6 +353,7 @@
   width: 100%;
   height: auto;
   text-align: center;
+  background-color: #000;
 }
 
 .edit_profile--container {

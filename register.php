@@ -45,7 +45,7 @@ if (isset($_REQUEST['register'])) {
 </head>
 
 <body>
-    <div class="register">
+    <div class="addboard">
         <div class="register--container">
             <div class="register--header">
                 <h1>สมัครสมาชิก</h1>

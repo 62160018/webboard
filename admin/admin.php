@@ -1,8 +1,9 @@
 <?php
+
 session_start();
 require_once '../config/db.php';
 
-if (!isset($_SESSION['u_id'])) {
+if (!isset($_SESSION['u_id']) || $_SESSION['type'] != '1' ) {
   header('location: ../index.php');
 }
 
@@ -24,7 +25,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KaToo สวัสดี</title>
+  <title>TikTalk</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
@@ -39,7 +40,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
         <div class="board--header d-flex">
 
           <div class="p-2 flex-grow-1 bd-highlight">
-            <h1>KaToo สวัสดี</h1>
+            <h1 class='topic'>TikTalk</h1>
           </div>
 
           <div class="p-2 bd-highlight">
@@ -78,7 +79,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
 
                       <td><?php echo $u['fullname'] ?></td>
                       <td>
-                        <div class="b p-2 bd-highlight" style="background: linear-gradient(110deg, #EB1D36 50%, #00D7FF 60%);">
+                        <div class="b p-2 bd-highlight" style="background-color: #f9bdbb;">
                           <a href="edit_member.php?u_id=<?php echo $u['u_id'] ?>" style="text-decoration:none; color:black;">ลบ/แก้ไข</a>
                         </div>
                       </td>
@@ -104,7 +105,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                     <tr>
                       <td><?php echo $cg_row['cg_name'] ?></td>
                       <td>
-                        <div class="b p-2 bd-highlight" style="background: linear-gradient(110deg, #EB1D36 50%, #00D7FF 60%);">
+                        <div class="b p-2 bd-highlight" style="background-color: #f9bdbb;">
                           <a href="edit_category.php?cg_id=<?php echo $cg_row['cg_id'] ?>" style="text-decoration:none; color:black;">ลบ/แก้ไข</a>
                         </div>
                       </td>

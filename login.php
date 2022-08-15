@@ -43,11 +43,11 @@ if (isset($_POST['login'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
-<body>
-    <div class="login">
-        <div class="login--container">
-            <div class="login--header">
-                <h1>เข้าสู่ระบบ</h1>
+<body class="addboard">
+    <div class="addboard">
+        <div class="login--container ">
+            <div class="login--header ">
+                <h1 >เข้าสู่ระบบ</h1>
             </div>
             <div class="login--body">
                 <div class="login--content">

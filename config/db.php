@@ -15,5 +15,5 @@
     } catch (PDOException $e) {
         exit("Error: " . $e->getMessage());
     }
-
+    
 date_default_timezone_set('Asia/Bangkok');

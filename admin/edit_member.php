@@ -78,7 +78,7 @@ if (isset($_REQUEST['delete_id'])) {
 
 <body>
 
-    <div class="edit_profile">
+    <div class="addboard">
         <div class="edit_profile--container">
             <div class="edit_profile--header">
                 <h1>Edit Profile</h1>
