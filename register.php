@@ -34,7 +34,7 @@ if (isset($_REQUEST['register'])) {
     if ($password == $passwordcon) {
         try {
             $query->execute();
-            $updateMsg = "สมัครสมาชืกสำเร็จ";
+            $updateMsg = "สมัครสมาชิกสำเร็จ";
             header("Refresh:1;index.php");
         }catch (Exception $e)
         {$errorMsg = "สมัครสมาชิกไม่สำเร็จ";}
