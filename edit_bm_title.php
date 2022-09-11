@@ -16,10 +16,14 @@ $query->execute();
 $result = $query->fetch(PDO::FETCH_ASSOC);
 
 if (isset($_REQUEST['editboard'])) {
+
     $bm_title = $_REQUEST['bm_title'];
-    $query = $connection->prepare("UPDATE board_main SET bm_title=:bm_title WHERE bm_id=:bm_id");
+    $cg_id = $_REQUEST['cg_id'];
+    $query = $connection->prepare("UPDATE board_main SET bm_title=:bm_title, cg_id=:cg_id WHERE bm_id=:bm_id");
     $query->bindParam("bm_id", $bme, PDO::PARAM_STR);
     $query->bindParam("bm_title", $bm_title, PDO::PARAM_STR);
+    $query->bindParam("cg_id", $cg_id, PDO::PARAM_STR);
+
     if ($query->execute()) {
         $updateMsg = "แก้ไขกระทู้สำเร็จ";
         header("Refresh:1;index.php");
@@ -102,8 +106,7 @@ if (isset($_REQUEST['delete_id'])) {
                         <div class="form-floating">
                             <?php
 
-                            $cg = $connection->prepare("SELECT * FROM category WHERE cg_id = :cg_id");
-                            $cg->bindParam("cg_id", $result['cg_id'], PDO::PARAM_STR);
+                            $cg = $connection->prepare("SELECT * FROM category");
                             $cg->execute();
                             $cg_result = $cg->fetchAll(PDO::FETCH_ASSOC);
 
@@ -111,7 +114,12 @@ if (isset($_REQUEST['delete_id'])) {
                             <select class="form-select" name="cg_id" id="cg_id">
                                 <?php
                                 foreach ($cg_result as $cg_row) {
-                                    echo "<option value='" . $cg_row['cg_id'] . "'>" . $cg_row['cg_name'] . "</option>";
+                                    if ($cg_row['cg_id'] == $result['cg_id']) {
+                                        $selected = "selected";
+                                    } else {
+                                        $selected = "";
+                                    }
+                                    echo "<option value='" . $cg_row['cg_id'] . "' " . $selected . ">" . $cg_row['cg_name'] . "</option>";
                                 }
                                 ?>
 

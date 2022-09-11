@@ -77,7 +77,7 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
                                 </a>
                             </div>
                             <?php
-                            $bm_cg = $connection->prepare("SELECT * FROM category WHERE cg_id=:cg_id");
+                            $bm_cg = $connection->prepare("SELECT * FROM category WHERE cg_id = :cg_id");
                             $bm_cg->bindParam("cg_id", $row['cg_id'], PDO::PARAM_STR);
                             $bm_cg->execute();
                             $bm_cgs = $bm_cg->fetch(PDO::FETCH_ASSOC);
