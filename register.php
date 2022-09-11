@@ -86,7 +86,7 @@ if (isset($_REQUEST['register'])) {
                             <label for="floatingInput">อีเมล</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="fullname" class="form-control" name="fullname" placeholder="fullname" required>
+                            <input type="fullname" class="form-control" name="fullname" placeholder="fullname" required maxlength="30">
                             <label for="floatingInput">ชื่อ - นามสกุล</label>
                         </div>
                         <div class="form-floating mb-3">

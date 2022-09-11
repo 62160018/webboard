@@ -81,7 +81,7 @@ if (isset($_REQUEST['delete_id'])) {
                 <button class="btn btn-success mb-3" onclick="location.href='index.php'">ย้อนกลับ</button>
                 <h1><?php echo $result['bm_title'] ?></h1>
 
-                <div class="detail--body">
+                <div class="detail--body card" style="background-color: rgba(220, 248, 214, 0.888);">
                     <div class="detail--content d-flex flex-column">
 
                         <div class="detail--content--img mb-3">
@@ -89,7 +89,7 @@ if (isset($_REQUEST['delete_id'])) {
                         </div>
 
 
-                        <div class="p-2 detail--content--text">
+                        <div class="p-2 detail--content--text card-body">
 
 
                             <p><?php echo $result['bm_detail'] ?></p>

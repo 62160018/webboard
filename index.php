@@ -117,12 +117,12 @@ $result = $query->fetch(PDO::FETCH_ASSOC);
             if (isset($_SESSION['u_id'])) {
 
             ?>
-                <div class="board--profile">
+                <div class="board--profile card" style="background-color: rgba(220, 248, 214, 0.888);">
                     <div class="profile-img">
                         <img src="img/user_profile/<?php echo $result['img'] ?>" alt="">
                     </div>
                     <hr>
-                    <div class="username">
+                    <div class="username card-body">
                         <p><?php echo $result['fullname']  ?></p>
                     </div>
                     <?php

@@ -123,7 +123,7 @@ if (isset($_REQUEST['delete_id'])) {
                                 <label for="fullname">อีเมล</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="fullname" value="<?php echo $result['fullname'] ?>" placeholder="fullname">
+                                <input type="text" class="form-control" name="fullname" value="<?php echo $result['fullname'] ?>" placeholder="fullname" maxlength="30">
                                 <label for="fullname">ชื่อ - นามสกุล</label>
                             </div>
 

@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Aug 08, 2022 at 03:38 PM
--- Server version: 5.7.33
--- PHP Version: 8.1.9
+-- Host: 127.0.0.1
+-- Generation Time: Sep 11, 2022 at 10:05 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -71,15 +71,13 @@ CREATE TABLE `category` (
 
 CREATE TABLE `users` (
   `u_id` int(11) NOT NULL,
-  `email` varchar(20) NOT NULL UNIQUE,
+  `email` varchar(255) NOT NULL,
   `fullname` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
   `img` varchar(200) DEFAULT NULL,
-  `type` int(1) NOT NULL DEFAULT '0' COMMENT '0 = member\r\n1 = admin'
+  `type` int(1) NOT NULL DEFAULT 0 COMMENT '0 = member\r\n1 = admin'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `users` (`u_id`, `email`, `fullname`, `password`, `img`, `type`) VALUES
-(1, 'admin@admin.com', 'Admin Srisamorn', '$2y$10$8qn2phEuDuXoPq257QxG9Og046KhIsQf/SZSX.hL4OXBTro.C8vu.', '35554b61ac86daf3ba8e0470d8033742.jpg', 1);
 --
 -- Indexes for dumped tables
 --
@@ -106,7 +104,8 @@ ALTER TABLE `category`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`u_id`);
+  ADD PRIMARY KEY (`u_id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
